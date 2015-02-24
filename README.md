@@ -79,6 +79,10 @@ There's a special Dockerfile command called `ONBUILD` that prefixes other comman
 
 ## Bonus meals ##
 
+* Share data between containers: https://docs.docker.com/userguide/dockervolumes/
+
+* Link containers together: https://docs.docker.com/userguide/dockerlinks/
+
 * Docker on Azure with powershell: http://blogs.technet.com/b/privatecloud/archive/2014/07/17/configuring-docker-on-azure-with-powershell-dsc.aspx
 
 * Docker on Azure with xplat-cli: http://azure.microsoft.com/en-us/documentation/articles/virtual-machines-docker-with-xplat-cli/
