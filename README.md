@@ -57,11 +57,16 @@ FROM microsoft/aspnet
 EXPOSE 5004
 ```
 
-This will create a container that is based on `microsoft/aspnet`, but with the change that it listens to port 5004. 
 
-To build this container simply run `docker build -t <yourname>/<imagename> .` inside the directory with the `Dockerfile`. The `-t` flag supplies the name of the image, as you might have guessed. If you now run a server the same way you did before, you should be able to use another boot2docker terminal to connect to the kestrel server.
+The Dockerfile is the recipe from which docker containers are built. In this case we will create a container that is based on `microsoft/aspnet`, but with the change that it listens to port 5004. 
 
-To see what ports your containers are exposing, you can use the `docker port <container>`, and to get all the details of the container - including its IP address, use `docker inspect <container>`. The output here is quite large so you might want to pipe it to `grep IPAddress`) Once you have found it, you should be able to run `curl <ip_address>:5004` and see the HTML of the ASP.NET welcome page.
+To build this container simply run `docker build -t <yourname>/<imagename> .` inside the directory with the `Dockerfile`. The `-t` flag supplies the name of the image, as you might have guessed. 
+
+After the build has finished, you can run  `docker images` to see what images you have on your system - you should be able to see the image you just built in that list
+
+If you now run a server the same way you did before, you should be able to use another boot2docker terminal to connect to the kestrel server.
+
+To see what ports your containers are exposing, you can use the `docker port <container>`. To get all the details of the container - including its IP address - use `docker inspect <container>` ( The output is quite large so you might want to pipe it to `grep IPAddress`) Once you have the addresss, you should be able to run `curl <ip_address>:5004` and see the HTML of the ASP.NET welcome page.
 
 To get the port forwarded even further, we can supply the `-p` flag to `docker run` to map ports between the host and the container - not entirely unlike the `-v` flag. Invoke the option with `-v HOST_PORT:CONTAINER_PORT`.
 
@@ -76,6 +81,8 @@ So let's start adding to the Dockerfile until it does. You can see the full Dock
 Once you are done (or think you are), just run `docker build -t <yourname>/aspnet` again and see how it works. Note that you can tag different images you create just by appending `:<tag>` to the image name. 
 
 To run your images, simply use `docker run` like before, but remember to remove the `-v` since your Dockerfile now should add files to the server dir as part of the build
+
+__N.B. again, due to issues with the kestrel server - it _must_ have a terminal running to start properly, so you still have to run it with the `-it` flag__ _(After it has been started you can kill the docker process that started it though and it will keep running)_
 
 ## Building a (more) generic base image for all asp.net vNext projects ##
 
