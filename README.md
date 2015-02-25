@@ -19,6 +19,10 @@ Run `docker ps` inside the virtual machine and you should get an empty list of d
 
 Run `docker run hello-world` and you will see the output from a process running inside an app. Note that running `docker ps` after `docker run hello-world` still returns an empty list. _A docker container will stop running when the process inside exits_
 
+Run `docker ps --all` to see all containers that have run. The `hello-world` has a status with `exited(0)`, which is totally normal
+
+To see the output of a container - running or not - you can run `docker logs <image_id_or_name>`.
+
 ## The ASP.NET image
 
 Now download the microsoft ASP.NET image by typing `docker pull microsoft/aspnet`. You'll notice that running this image will return immediately since it is only meant to be the base for containers
