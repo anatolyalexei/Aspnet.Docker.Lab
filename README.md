@@ -4,10 +4,10 @@ In this lab we will explore some core container concepts with the help of asp.ne
 
 ## Prerequisites
 
-* ASP.NET vNext tools - either [Visual Studio 2015 CTP](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx) or [KRE](https://github.com/aspnet/home) with your favorite editor, and [yeoman](http://yeoman.io/) and aspnet-generator
+* ASP.NET vNext tools - either [Visual Studio 2015 CTP](http://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx) or [KRE](https://github.com/aspnet/home) with [your favorite editor](http://www.omnisharp.net/) (optionally [yeoman](http://yeoman.io/) with aspnet-generator )
 * [boot2docker for windows](https://github.com/boot2docker/windows-installer/releases)
 * [VirtualBox](https://www.virtualbox.org/)
-* You also need to [disable Hyper-V for Windows](http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx) VirtualBox. 
+* You also need to [disable Hyper-V for Windows](http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx) to run VirtualBox. 
 * [cmder](https://bliker.github.io/cmder/) - Optional. But recommended for a sane terminal experience
 
 ## Starting up
