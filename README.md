@@ -19,7 +19,7 @@ Run `docker ps` inside the virtual machine and you should get an empty list of d
 
 Run `docker run hello-world` and you will see the output from a process running inside an app. Note that running `docker ps` after `docker run hello-world` still returns an empty list. _A docker container will stop running when the process inside exits_
 
-Run `docker ps --all` to see all containers that have run. The `hello-world` has a status with `exited(0)`, which is totally normal
+Run `docker ps --all` to see all containers that have run. The `hello-world` has a status with `exited(0)`, which is standard for processes that exit without errors.
 
 To see the output of a container - running or not - you can run `docker logs <image_id_or_name>`.
 
@@ -44,6 +44,8 @@ Run a bash shell inside the container where you mount `src/AspNet.Docker` under 
 `kpm restore`
 
 `k kestrel`
+
+Now you should be able to make changes in your code repo while and see them reflected in your container immediately.
 
 ## Customizing the image with a Dockerfile ##
 
@@ -80,7 +82,7 @@ So let's start adding to the Dockerfile until it does. You can see the full Dock
 
 Once you are done (or think you are), just run `docker build -t <yourname>/aspnet` again and see how it works. Note that you can tag different images you create just by appending `:<tag>` to the image name. 
 
-To run your images, simply use `docker run` like before, but remember to remove the `-v` since your Dockerfile now should add files to the server dir as part of the build
+To run your images, simply use `docker run` like before, but remember to remove the `-v` since your Dockerfile now should add files to the server dir as part of the build. However, you should still use -v when you are developing and want to test out your code in the container.
 
 __N.B. again, due to issues with the kestrel server - it _must_ have a terminal running to start properly, so you still have to run it with the `-it` flag__ _(After it has been started you can kill the docker process that started it though and it will keep running)_
 
