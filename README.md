@@ -12,7 +12,7 @@ In this lab we will explore some core container concepts with the help of asp.ne
 
 ## Starting up
 
-Open up your terminal and run `boot2docker start` to create a virtual machine that will run docker. 
+Open up your terminal and run `boot2docker init` to create a virtual machine that will run docker. 
 When done, you will be logged into the machine, but if that doesn't happen, run `boot2docker ssh` to login.
 
 Run `docker ps` inside the virtual machine and you should get an empty list of docker containers
